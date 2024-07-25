@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+         unordered_map<int , int > hmap;
+         vector <int> dup;
+         int n = nums.size();
+
+         for(int i =0;i<n;i++){
+            hmap[nums[i]]++;
+         }
+
+        for(auto it :hmap){
+            if(it.second  >1){
+                dup.push_back(it.first);
+            }
+        }
+         return dup;
+    }
+};
